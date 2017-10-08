@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+   Title="Lantern of Hope"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="aqq.Login"
+     xmlns:local="clr-namespace:aqq.MarkupExtension">
+    <ContentPage  Title="Login" Icon="home.png" >
+    <Grid>
+  <Image Grid.RowSpan="1" Grid.ColumnSpan="1" x:Name="background" Aspect="AspectFill" Opacity="0.2"/>   
+        <ScrollView Grid.Row = "0" Grid.Column="0">
+            <StackLayout>  
+<StackLayout Padding="10,10,10,10" 
+        Spacing="5"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+    <Image x:Name="image1" WidthRequest="100"  Source="{local:EmbeddedImage ResourceId = aqq.Image.logo.png}"></Image>
+        <Label Text="You have to fill the form to peer learning" ></Label>
+
+                
+       <!--<Button Text="Job" Clicked="Job_Clicked"></Button>-->
+        <Entry TextColor="Navy" Keyboard="Email" 
+         Placeholder="Email Address" x:Name="email"></Entry>
+          <Label x:Name="label1" IsVisible="false" TextColor="Red" FontSize="12" Text="Please enter a valid email address(e.g.xx@gmail.com)">
+ </Label>
+        <Entry TextColor="Navy" Keyboard="Telephone"
+         Placeholder="Phone Number" x:Name="phone"></Entry>
+            <Label x:Name="label2" IsVisible="false" TextColor="Red" FontSize="12" Text="Please enter a valid Australian phone number(e.g.0412345678)"></Label>
+              
+         <Picker x:Name="picker" Title="Select your occupation">
+        <Picker.Items>
+               
+                <x:String>Learner</x:String>
+                <x:String>Volunteer</x:String>
+                 <x:String>Mentor</x:String>
+            </Picker.Items>
+        </Picker></StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="0,10,0,10">
+        
+        <Button Text="Enter" x:Name="button2" Clicked="Submit" FontSize="17" HorizontalOptions="CenterAndExpand" BackgroundColor="#4DAFEA"
+                    HeightRequest="40" BorderRadius="10" TextColor="White" WidthRequest="70"></Button>
+        <Button Text="Skip" x:Name="button1" Clicked="Skip" FontSize="17" HorizontalOptions="CenterAndExpand" 
+                    BackgroundColor="#4DAFEA" HeightRequest="40" BorderRadius="10" TextColor="White" WidthRequest="70"></Button>
+      
+      </StackLayout>  
+                    
+                    
+                    <StackLayout Padding="0,10,0,0">
+             <Label x:Name="terms" Text="   ✔️ I agree with Terms and Conditions" FontSize="10" XAlign="End" YAlign="End">
+
+                <Label.GestureRecognizers>
+      <TapGestureRecognizer
+            Tapped="OnLabelTapped"
+            NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+
+                </Label>
+                 <ActivityIndicator Color="Black"                   
+                       IsVisible="False"
+                       IsEnabled="True"
+                        IsRunning="true"
+                       x:Name="indicator"/> 
+             </StackLayout> </StackLayout>
+    </ScrollView>
+            </Grid>
+</ContentPage>
+
+ <ContentPage Title="about us" Icon="about.png" >
+ <Grid>
+    <Image Grid.RowSpan="1" Grid.ColumnSpan="1" x:Name="backgroundAboutus" Aspect="AspectFill" Opacity="0.2"/>
+
+        <ScrollView Grid.Row = "0" Grid.Column="0"> <StackLayout Spacing="10" Padding="10,5,10,5" >
+      
+        <Image AnchorX="0.4" Source="{local:EmbeddedImage ResourceId = aqq.Image.logo.png}" HeightRequest="80" ></Image>
+        <Label 
+            Text="For the refugees in Victoria, who have lack of education facilities to help them learn new skills. Lantern of Hope is an app that will connect skilled refugees to all other refugees who are looking to learn new skills. This app will use the resources within the refugee community to improve lives of other refugees. In this way, the refugees will not be dependent on the help of other organization like in case of other solutions available in Victoria."></Label>
+
+              <Label x:Name="disclaimer" Text="  Disclaimer " TextColor="Blue" FontSize="12" XAlign="Start" YAlign="End">
+
+                <Label.GestureRecognizers>
+      <TapGestureRecognizer
+            Tapped="OnLabel2Tapped"
+            NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+
+                </Label>
+
+                </StackLayout>
+            </ScrollView>
+            </Grid>
+    </ContentPage>
+
+      <ContentPage Title="help" Icon="help.png">
+        <Grid>
+
+          <Image Grid.RowSpan="1" Grid.ColumnSpan="1" x:Name="backgroundHelp" Aspect="AspectFill" Opacity="0.2"/>
+         <ScrollView Grid.Row = "0" Grid.Column="0">
+   <!--  <StackLayout BackgroundColor="Gray" Opacity="0.7">-->
+
+        <StackLayout Orientation="Vertical"
+                     Padding="20, 10 ,20, 0" Spacing ="10">
+            <Label Text="Below is an instuction of Lantern of Hope. There are 7 features in total." />
+            <StackLayout Orientation="Horizontal">
+                <Image  Source="{local:EmbeddedImage ResourceId = aqq.Image.online.png}" 
+                        VerticalOptions="Start"
+                        WidthRequest="50" />
+                <Label Text="1. Online Study: you can browse free online courses according to what you are interested in. ICT, food, health and English are the 4 categories provided now. " />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image  Source="{local:EmbeddedImage ResourceId = aqq.Image.peer.png}" 
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label  Text="2. Peer Learning: you can find pals with the same interst, and follow them for further communication. You need to have your profile information filled in order to use this feature, and you can find your profile in the right-bottom corner icon." />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">           
+            <Image  Source="{local:EmbeddedImage ResourceId = aqq.Image.cou.png}" 
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label   Text="3. Courses Provided: As a mentor, you can post courses that you can teach, and as a learner, you can  enrol couses that has been posted. You need to have your profile information filled in order to use this feature, and you can find your profile in the right-bottom corner icon." />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+            <Image  Source="{local:EmbeddedImage ResourceId = aqq.Image.job.png}"  
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label  Text="4. Job Service: you can look up job help facilities in a certain area by entering its postcode, address, contact detail are provided, along with a map-view." />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+            <Image  Source="{local:EmbeddedImage ResourceId = aqq.Image.volunteering.png}"  
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label  Text="5. Volunteering: you can look up volunteering opportunities in an area with its postcode entered, detailed information will be displayed as well as the embedded map." />
+            </StackLayout>
+
+                    
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{local:EmbeddedImage ResourceId = aqq.Image.map.png}" 
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label Text="6. Library: you can find library in the embedded map, by your current location or a postcode entered" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{local:EmbeddedImage ResourceId = aqq.Image.chat.png}" 
+                        VerticalOptions="Start"
+                        WidthRequest="50"/>
+                <Label  Text="7. Chat: here you can socialize. All people you have followed can be found here, and any following request will be poped up here. You can contact them by email or message." />
+            </StackLayout>                    
+         
+            </StackLayout>
+      <!--  </StackLayout>-->
+    </ScrollView></Grid></ContentPage>
+    
+    </TabbedPage>

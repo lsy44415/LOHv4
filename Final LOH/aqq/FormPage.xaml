@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:local="clr-namespace:aqq.MarkupExtension" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="aqq.FormPage">
+
+
+
+
+
+
+    
+
+
+    <Grid>
+
+
+  <Image Grid.RowSpan="1" Grid.ColumnSpan="1" x:Name="background" Aspect="AspectFill" Opacity="0.2"/>
+
+<StackLayout Padding="10,20,10,10" Spacing="50" HorizontalOptions="Center" VerticalOptions="Center" >
+       
+          <Image Source="{local:EmbeddedImage ResourceId = aqq.Image.peer.png}" >
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer
+            Tapped="OnImage2Tapped"
+            NumberOfTapsRequired="1" />
+               </Image.GestureRecognizers>
+            </Image>
+            
+
+
+        <Image Source="{local:EmbeddedImage ResourceId = aqq.Image.cou.png}" >
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer
+            Tapped="OnImage1Tapped"
+            NumberOfTapsRequired="1" />
+               </Image.GestureRecognizers>
+            </Image>
+
+
+       <ActivityIndicator Color="Black"                   
+                       IsVisible="False"
+                       IsEnabled="True"
+                        IsRunning="true"
+                       x:Name="indicator"/> 
+
+    </StackLayout>
+ </Grid>
+</ContentPage>

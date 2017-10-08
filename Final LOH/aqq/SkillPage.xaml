@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Padding="15,5,15,5" BackgroundColor="#F9F6F6"
+    xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+  
+    xmlns:local="clr-namespace:aqq.MarkupExtension" x:Class="aqq.SkillPage">
+    <StackLayout>
+    <Grid>
+    <Grid.RowDefinitions>
+         <RowDefinition Height="1*"/>
+         <RowDefinition Height="3*"/>
+         <RowDefinition Height="3*"/>       
+
+    </Grid.RowDefinitions>
+
+               
+
+            
+             <Label x:Name="skill" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text=" What skill are you interested in"  FontSize="20"/>
+              
+   
+            
+             <Image x:Name="ict" Grid.Row="1" Grid.Column="0" Source="{local:EmbeddedImage ResourceId = aqq.Image.ict.png}" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImage1Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+
+             <Image x:Name="english" Grid.Row="1" Grid.Column="1" Source="{local:EmbeddedImage ResourceId = aqq.Image.english.png}" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImage2Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+             <Image x:Name="health" Grid.Row="2" Grid.Column="0" Source="{local:EmbeddedImage ResourceId = aqq.Image.health.png}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImage3Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            
+            <Image x:Name="food" Grid.Row="2" Grid.Column="1" Source="{local:EmbeddedImage ResourceId = aqq.Image.food.png}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImage4Tapped" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            
+
+        </Grid>
+
+
+    </StackLayout>
+
+
+</ContentPage>
